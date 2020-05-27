@@ -1,0 +1,20 @@
+class Node:
+    def __init__(self, value=0, Next=None):
+      self.Value = value
+      self.Next = Next
+
+
+def getSecondToLast(head: Node):
+    if head is None or head.Next is None:
+        return None
+    elif head.Next.Next is None:
+        return head
+    temp = head
+    while temp.Next.Next is not None:
+        temp = temp.Next
+    return temp
+
+head = Node(2, Node(5, Node(7, Node(1, Node(3)))))  
+
+result = ("The result of the second last node is: ",getSecondToLast(head).Value)    
+print (result)
