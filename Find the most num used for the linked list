@@ -1,0 +1,39 @@
+class Node(object):
+   next=None
+   def __init__(self,data):
+       self.data=data
+       
+class RANDOM_lList(object):
+   def __init__(self):
+       self.head=None
+   def push_beg(self,data):
+       newNode=Node(data)
+       if self.head is None:
+           self.head=newNode
+       else:
+           newNode.next=self.head
+           self.head=newNode
+   def getCount(self,data):
+        temp2=self.head
+        count=0
+
+        while(temp2 is not None):
+       
+            if temp2.data==data:
+                count+=1
+            temp2=temp2.next
+        return count  
+      
+list= RANDOM_lList()
+
+#inserting values in Linked_List
+list.push_beg(8)
+list.push_beg(4)
+list.push_beg(7)
+list.push_beg(7)
+list.push_beg(0)
+list.push_beg(4)
+list.push_beg(7)
+
+result = int(input("Please Enter a number for count: "))
+print("Number Founded matched ",list.getCount(result))
